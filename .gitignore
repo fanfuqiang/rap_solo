@@ -5,5 +5,6 @@ tags
 *.out
 *.s
 *.S
+*.so
 *.dump
 
