@@ -3,7 +3,8 @@ SRCS = $(wildcard *.c)
 OBJS = $(SRCS:.c=.o)
 
 LDFLAGS = -shared
-CFLAGS = -O2 -std=gnu++98 -ggdb -fvisibility=hidden -fno-rtti -fno-exceptions -fPIC -c
+CFLAGS = -g3 -O0 -std=gnu++98 -ggdb -fvisibility=hidden -fno-rtti -fno-exceptions -fPIC -c
+#CFLAGS = -O2 -std=gnu++98 -ggdb -fvisibility=hidden -fno-rtti -fno-exceptions -fPIC -c
 HEADER = -I`$(CC) -print-file-name=plugin`/include -I`$(CC) -print-file-name=plugin`/include/c-family -I..
 #HEADER = -I/usr/lib/gcc/x86_64-linux-gnu/4.8/plugin/include -I../../gcc-plugins
 RAP = rap_plugin.so # target lib

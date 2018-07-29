@@ -43,7 +43,7 @@ extern bool is_rap_function_never_escape (tree t) {
         
         /* Function is visible in current compilation unit only
            and its address is never taken. */
-        if (node->local && node->local.local)
+        if (/*node->local && */ node->local.local)
                 return true;
 
         /* Function has NOT address taken */
@@ -52,7 +52,7 @@ extern bool is_rap_function_never_escape (tree t) {
            program optimization*/
         else if (!(node->symbol.address_taken 
                 || node->symbol.externally_visible 
-                || TREE_PUBLIC(tree)))
+                || TREE_PUBLIC(t)))
                 return true;
 
         return false;

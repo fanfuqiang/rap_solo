@@ -1,10 +1,11 @@
 #
 !*/testcase/main.c
+!*/*.c
 tags
-*.o
-*.out
-*.s
-*.S
-*.so
-*.dump
+*/*.o
+*/*.out
+*/*.s
+*/*.S
+*/*.so
+*/*.dump
 
