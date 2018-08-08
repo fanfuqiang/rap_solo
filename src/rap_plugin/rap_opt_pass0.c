@@ -58,6 +58,21 @@ extern bool is_rap_function_never_escape (tree t) {
         return false;
 }
 
+/* Basic test */  
+// int call_flags = gimple_call_flags (stmt);
+static inline bool 
+is_rap_function_may_be_aliased (tree f)
+{
+  return (TREE_CODE (f) != CONST_DECL
+	  && !((TREE_STATIC (f) || TREE_PUBLIC (f) || DECL_EXTERNAL (f))
+	       && TREE_READONLY (f)
+	       && !TYPE_NEEDS_CONSTRUCTING (TREE_TYPE (f)))
+	  && (TREE_PUBLIC (f)
+	      || DECL_EXTERNAL (f)
+	      || TREE_ADDRESSABLE (f)));
+}
+
+
 #if 0
 /*
 
